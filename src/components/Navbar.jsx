@@ -10,14 +10,14 @@ const navigationItems = [
 const Navbar = ({ currentRoute }) => {
   return (
     <nav className="text-white capitalize">
-      <div className="flex items-center justify-between px-16 py-5">
-        <div>logo</div>
+      <div className="flex items-center justify-between py-5">
+        <div className="cursor-pointer">logo</div>
         <ul className="flex justify-between items-center space-x-8">
           {navigationItems.map((item, index) => (
             <li
               key={index}
               className={`cursor-pointer ${
-                currentRoute === item.route ? "text-blue-400 underline" : ""
+                currentRoute === item.route ? "text-blue-500 font-bold" : ""
               }`}
             >
               {item.text}
