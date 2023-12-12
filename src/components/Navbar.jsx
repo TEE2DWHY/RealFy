@@ -2,7 +2,7 @@ import { DarkMode } from "../assets/icons/icons";
 
 const navigationItems = [
   { text: "home", route: "/" },
-  { text: "residence", route: "/residence" },
+  { text: "residence", route: "/residence", id: "residence" },
   { text: "value", route: "/value" },
   { text: "contact", route: "/contact" },
 ];
@@ -14,14 +14,17 @@ const Navbar = ({ currentRoute }) => {
         <div className="cursor-pointer">logo</div>
         <ul className="flex justify-between items-center space-x-8">
           {navigationItems.map((item, index) => (
-            <li
-              key={index}
-              className={`cursor-pointer ${
-                currentRoute === item.route ? "text-blue-500 font-bold" : ""
-              }`}
-            >
-              {item.text}
-            </li>
+            <>
+              <a href={`#${item.id}`} key={index}>
+                <li
+                  className={`cursor-pointer ${
+                    currentRoute === item.route ? "text-blue-500 font-bold" : ""
+                  }`}
+                >
+                  {item.text}
+                </li>
+              </a>
+            </>
           ))}
         </ul>
         <div className="flex justify-between items-center space-x-5">

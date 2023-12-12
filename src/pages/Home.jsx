@@ -1,11 +1,83 @@
+// *
 import { useEffect, useState } from "react";
-import { Location } from "../assets/icons/icons";
+// icons
+import { Greater, Lesser, Location } from "../assets/icons/icons";
+// components
 import Navbar from "../components/Navbar";
-
 // images
 import heroImg from "../assets/images/hero-img.jpg";
+import estateOne from "../assets/images/estate.jpeg";
+import estateTwo from "../assets/images/estate-2.jpeg";
+import estateThree from "../assets/images/estate-3.jpeg";
+import estateFour from "../assets/images/estate-4.jpeg";
+import brandOne from "../assets/images/brand-1.avif";
+import brandTwo from "../assets/images/brand-2.avif";
+import brandThree from "../assets/images/brand-3.avif";
+import brandFour from "../assets/images/brand-4.avif";
+
+// brands array
+const brands = [
+  {
+    img: brandOne,
+    alt: "brand-img",
+    animation: "slide-left",
+    duration: "2000",
+  },
+  {
+    img: brandTwo,
+    alt: "brand-img",
+    animation: "slide-left",
+    duration: "1400",
+  },
+  {
+    img: brandThree,
+    alt: "brand-img",
+    animation: "slide-left",
+    duration: "1000",
+  },
+  {
+    img: brandFour,
+    alt: "brand-img",
+    animation: "slide-left",
+    duration: "800",
+  },
+];
+
+// carousel contents
+const carouselContents = [
+  {
+    img: estateOne,
+    price: "$75,023",
+    name: "Briticia Private Garden",
+    address:
+      "Oliva Private Garden Along St David church arequipa, - Peru Av. Sol #5276",
+  },
+  {
+    img: estateTwo,
+    price: "$80,000",
+    name: "Sunset Villa",
+    address: "Near Beach Road, California - USA",
+  },
+  {
+    img: estateThree,
+    price: "$65,000",
+    name: "Hillside Hideout",
+    address: "On the foothills of Mountain Range, New Zealand",
+  },
+  {
+    img: estateFour,
+    price: "$95,000",
+    name: "Lakeview Cottage",
+    address: "By the Lakeside, Ontario - Canada",
+  },
+];
 
 const Home = () => {
+  const [currentContent, setCurrentContent] = useState(0);
+  const handleSlide = (index) => {
+    setCurrentContent(index);
+  };
+
   const [premiumProduct, setPremiumProduct] = useState(0);
   const [customerStats, SetCustomerStats] = useState(8);
   const [awardStats, setAwardStats] = useState(14);
@@ -32,7 +104,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-bg-intro  px-16">
+      <div className="bg-bg-intro px-16">
         {/* Navbar */}
         <Navbar currentRoute={window.location.pathname} />
         {/* Hero Section */}
@@ -54,7 +126,7 @@ const Home = () => {
               <button className="bg-blue-600 py-2 px-6 -ml-28 rounded-md text-sm">
                 Search
               </button>
-              <ul className="flex items-center justify-between w-2/5 my-3 p-4">
+              <ul className="flex items-center justify-between w-2/4 my-3 px-4">
                 <li className="text-4xl">
                   {premiumProduct}K <sup className="text-amber-600">+</sup>
                   <span className="text-sm block mt-2 font-sans">
@@ -77,7 +149,7 @@ const Home = () => {
             </div>
             <div className="w-2/5">
               <img
-                className="w-full h-full block m-auto rounded-tl-[82px] rounded-tr-[84px] rounded-br-[0px] rounded-bl-[14px]"
+                className="w-full h-hero-img-height block mx-auto rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
                 src={heroImg}
                 alt="hero-img"
               />
@@ -85,15 +157,86 @@ const Home = () => {
           </div>
         </section>
       </div>
+
       {/* Partners */}
       <section className="px-16 pt-14" id="partners">
         <div className="flex items-center justify-between">
-          <div>Company A</div>
-          <div>Company B</div>
-          <div>Company C</div>
-          <div>Company D</div>
+          {brands.map((brand, index) => (
+            <img
+              data-aos={brand.animation}
+              data-aos-duration={brand.duration}
+              key={index}
+              className="w-60 h-60 cursor-pointer"
+              src={brand.img}
+              alt={brand.alt}
+            />
+          ))}
         </div>
       </section>
+
+      {/* Popular Residences */}
+      <section className="px-16 mt-20" id="residence">
+        <p className="text-xl text-amber-600 mb-3 font-sans">Best Choice.</p>
+        <h1 className="text-3xl mb-4">Popular Residences.</h1>
+        <div>
+          <div className="flex hover:rounded-md hover:rounded-b-md hover:shadow-lg px-4 py-4">
+            <div className="flex-shrink-0">
+              <img
+                className="rounded-lg my-3 cursor-pointer"
+                src={carouselContents[currentContent].img}
+                alt="carousel-img"
+              />
+              <p className="font-bold font-sans text-md">
+                {carouselContents[currentContent].price}
+              </p>
+              <p className="font-sans text-amber-600 text-md">
+                {carouselContents[currentContent].name}
+              </p>
+              <p className="text-md w-3/5 font-sans font-bold">
+                {carouselContents[currentContent].address}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center my-6">
+            <button
+              className="border-gray-400 bg-slate-300 px-2 py-1 rounded-md mr-3"
+              onClick={() =>
+                handleSlide((currentContent + 1) % carouselContents.length)
+              }
+            >
+              <Greater />
+            </button>
+            <button
+              className="border-gray-400 bg-slate-300 px-2 py-1 rounded-md"
+              onClick={() => {
+                handleSlide(
+                  (currentContent - 1 + carouselContents.length) %
+                    carouselContents.length
+                );
+              }}
+            >
+              <Lesser />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      {/* <section id="features">
+        <div>
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <p>Our Value</p>
+            <h1>Value We Give To You.</h1>
+            <p>
+              We are always ready to help by providing the best service for you.
+              We believe a good place to live can make your life better.
+            </p>
+          </div>
+        </div>
+      </section> */}
     </>
   );
 };
