@@ -2,7 +2,7 @@ import { DarkMode } from "../assets/icons/icons";
 
 const navigationItems = [
   { text: "home", route: "/" },
-  { text: "residence", route: "/residence", id: "residence" },
+  { text: "residence", route: "/residence", id: "#residence" },
   { text: "value", route: "/value" },
   { text: "contact", route: "/contact" },
 ];

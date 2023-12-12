@@ -18,7 +18,7 @@ export const Location = () => {
   );
 };
 
-export const Greater = () => {
+export const Next = () => {
   return (
     <>
       <FaGreaterThan className="inline text-blue-600" />
@@ -26,7 +26,7 @@ export const Greater = () => {
   );
 };
 
-export const Lesser = () => {
+export const Previous = () => {
   return (
     <>
       <FaLessThan className="inline text-blue-600" />

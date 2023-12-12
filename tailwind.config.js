@@ -11,7 +11,7 @@ export default {
           "linear-gradient(170deg,hsl(0, 0%, 22%) 0%,hsl(0, 0%, 6%)30%)",
       },
       height: {
-        "hero-img-height": "500px",
+        "hero-img-height": "600px",
       },
     },
   },
