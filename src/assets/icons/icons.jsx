@@ -1,6 +1,7 @@
 import { MdDarkMode } from "react-icons/md";
 import { ImLocation } from "react-icons/im";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
+import { MdOutlineArrowDropDown } from "react-icons/md";
 
 export const DarkMode = () => {
   return (
@@ -30,6 +31,17 @@ export const Previous = () => {
   return (
     <>
       <FaLessThan className="inline text-blue-600" />
+    </>
+  );
+};
+
+export const ArrowDown = () => {
+  return (
+    <>
+      <MdOutlineArrowDropDown
+        className="inline bg-slate-300 p-1 rounded-lg"
+        size="25"
+      />
     </>
   );
 };

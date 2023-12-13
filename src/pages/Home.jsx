@@ -1,21 +1,16 @@
 // *
 import { useEffect, useState } from "react";
 // icons
-import { Next, Previous, Location } from "../assets/icons/icons";
+import { Next, Previous, Location, ArrowDown } from "../assets/icons/icons";
 // components
 import Navbar from "../components/Navbar";
 // images
 import heroImg from "../assets/images/hero-img.jpg";
-
+import estateFive from "../assets/images/estate-5.avif";
 //data
 import { brands, carouselContents } from "../data/data";
 
 const Home = () => {
-  const [currentContent, setCurrentContent] = useState(0);
-  const handleSlide = (index) => {
-    setCurrentContent(index);
-  };
-
   const [premiumProduct, setPremiumProduct] = useState(0);
   const [customerStats, SetCustomerStats] = useState(8);
   const [awardStats, setAwardStats] = useState(14);
@@ -39,6 +34,13 @@ const Home = () => {
     SetCustomerStats(customerStats + 2);
     setAwardStats(awardStats + 5);
   }, [premiumProduct]);
+
+  const [currentContent, setCurrentContent] = useState(0);
+  const handleSlide = (index) => {
+    setCurrentContent(index);
+  };
+
+  const [clicked, setClicked] = useState(false);
 
   return (
     <>
@@ -123,6 +125,7 @@ const Home = () => {
                 className="rounded-lg my-3 cursor-pointer"
                 src={carouselContents[currentContent].img}
                 alt="carousel-img"
+                data-aos="fade-in"
               />
               <p className="font-bold font-sans text-md">
                 {carouselContents[currentContent].price}
@@ -160,21 +163,48 @@ const Home = () => {
       </section>
 
       {/* Features */}
-      {/* <section id="features">
-        <div>
-          <div>
-            <img src="" alt="" />
+      <section className="px-16 py-40" id="features">
+        <div className="flex justify-between">
+          <div className="w-5/12">
+            <img
+              className="w-5/6 h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
+              src={estateFive}
+              alt="features-img"
+            />
           </div>
-          <div>
-            <p>Our Value</p>
-            <h1>Value We Give To You.</h1>
-            <p>
+          <div className="pt-4 px-20 w-3/5">
+            <p className="text-amber-600 font-sans text-2xl">Our Value</p>
+            <h1 className="text-blue-700 font-sans text-4xl my-2 font-bold">
+              Value We Give To You.
+            </h1>
+            <p className="w-4/6 font-sans text-gray-500 flex items-center justify-center">
               We are always ready to help by providing the best service for you.
               We believe a good place to live can make your life better.
             </p>
+            <div className="rounded-md border-solid border-gray-900 py-2">
+              <div className=" text-blue-600 my-4 font-sans border-2 py-3 px-2 rounded-lg font-bold w-10/12">
+                <div className="flex items-center justify-between">
+                  <span> Best interest rates on the market</span>
+                  <span onClick={() => setClicked(!clicked)}>
+                    <ArrowDown />
+                  </span>
+                </div>
+                {clicked && (
+                  <p
+                    className="text-gray-500 my-2 px-2 text-sm"
+                    data-aos="fade-in"
+                  >
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Numquam excepturi asperiores doloremque reiciendis velit
+                    quidem earum vero nemo modi aliquid iste fugiat, aperiam
+                    eligendi cum, facilis nobis quas explicabo. Vitae
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 };
