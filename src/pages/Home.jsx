@@ -1,14 +1,14 @@
 // *
 import { useEffect, useState } from "react";
 // icons
-import { Next, Previous, Location, ArrowDown } from "../assets/icons/icons";
+import { Next, Previous, Location, List } from "../assets/icons/icons";
 // components
 import Navbar from "../components/Navbar";
 // images
 import heroImg from "../assets/images/hero-img.jpg";
 import estateFive from "../assets/images/estate-5.avif";
 //data
-import { brands, carouselContents } from "../data/data";
+import { brands, carouselContents, accordionData } from "../data/data";
 
 const Home = () => {
   const [premiumProduct, setPremiumProduct] = useState(0);
@@ -40,7 +40,13 @@ const Home = () => {
     setCurrentContent(index);
   };
 
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleAccordion = (index) => {
+    setClicked(index);
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -164,7 +170,7 @@ const Home = () => {
 
       {/* Features */}
       <section className="px-16 py-40" id="features">
-        <div className="flex justify-between">
+        <div className="flex justify-between h-[480px]">
           <div className="w-5/12">
             <img
               className="w-5/6 h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
@@ -182,25 +188,29 @@ const Home = () => {
               We believe a good place to live can make your life better.
             </p>
             <div className="rounded-md border-solid border-gray-900 py-2">
-              <div className=" text-blue-600 my-4 font-sans border-2 py-3 px-2 rounded-lg font-bold w-10/12">
-                <div className="flex items-center justify-between">
-                  <span> Best interest rates on the market</span>
-                  <span onClick={() => setClicked(!clicked)}>
-                    <ArrowDown />
-                  </span>
+              {accordionData.map((data, index) => (
+                <div
+                  className="text-blue-600 my-4 font-sans border-2 py-3 px-2 rounded-lg font-bold w-10/12"
+                  key={index}
+                >
+                  <div className="flex items-center justify-between">
+                    <span>
+                      <List /> {data.question}
+                    </span>
+                    <span onClick={() => handleAccordion(data.accordionKey)}>
+                      {data.icon}
+                    </span>
+                  </div>
+                  {isOpen && clicked === data.accordionKey && (
+                    <p
+                      className="text-gray-500 my-2 px-2 text-sm"
+                      data-aos="fade-in"
+                    >
+                      {accordionData[clicked].answer}
+                    </p>
+                  )}
                 </div>
-                {clicked && (
-                  <p
-                    className="text-gray-500 my-2 px-2 text-sm"
-                    data-aos="fade-in"
-                  >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Numquam excepturi asperiores doloremque reiciendis velit
-                    quidem earum vero nemo modi aliquid iste fugiat, aperiam
-                    eligendi cum, facilis nobis quas explicabo. Vitae
-                  </p>
-                )}
-              </div>
+              ))}
             </div>
           </div>
         </div>

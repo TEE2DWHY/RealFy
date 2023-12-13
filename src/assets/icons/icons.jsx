@@ -2,6 +2,8 @@ import { MdDarkMode } from "react-icons/md";
 import { ImLocation } from "react-icons/im";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import { MdOutlineArrowDropDown } from "react-icons/md";
+import { MdOutlineFilterList } from "react-icons/md";
+import { MdCancel } from "react-icons/md";
 
 export const DarkMode = () => {
   return (
@@ -42,6 +44,22 @@ export const ArrowDown = () => {
         className="inline bg-slate-300 p-1 rounded-lg"
         size="25"
       />
+    </>
+  );
+};
+
+export const List = () => {
+  return (
+    <>
+      <MdOutlineFilterList className="inline mr-1 cursor-pointer" size="20" />
+    </>
+  );
+};
+
+export const Cancel = () => {
+  return (
+    <>
+      <MdCancel className="inline mr-1 cursor-pointer" size="20" />
     </>
   );
 };

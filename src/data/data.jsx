@@ -6,6 +6,7 @@ import brandOne from "../assets/images/brand-1.avif";
 import brandTwo from "../assets/images/brand-2.avif";
 import brandThree from "../assets/images/brand-3.avif";
 import brandFour from "../assets/images/brand-4.avif";
+import { ArrowDown, Cancel } from "../assets/icons/icons";
 
 // brands array
 const brands = [
@@ -64,4 +65,31 @@ const carouselContents = [
   },
 ];
 
-export { brands, carouselContents };
+const accordionData = [
+  {
+    question: "Best interest rates on the market",
+    icon: <ArrowDown />,
+    close: <Cancel />,
+    answer:
+      "We offer competitive interest rates that suit your budget and financial needs. Our rates are designed to ensure affordability and convenience for property investments.",
+    accordionKey: 0,
+  },
+  {
+    question: "Prevent unstable prices",
+    icon: <ArrowDown />,
+    close: <Cancel />,
+    answer:
+      "We guarantee price stability on your property investments. Our transparent pricing models ensure no unexpected price changes, securing your investment's value over time.",
+    accordionKey: 1,
+  },
+  {
+    question: "Security of Data.",
+    icon: <ArrowDown />,
+    close: <Cancel />,
+    answer:
+      "Data security is our top priority. We implement state-of-the-art security measures to protect your personal and property-related information, ensuring confidentiality and trust.",
+    accordionKey: 2,
+  },
+];
+
+export { brands, carouselContents, accordionData };
