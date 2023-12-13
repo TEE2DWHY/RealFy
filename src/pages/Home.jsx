@@ -1,7 +1,13 @@
 // *
 import { useEffect, useState } from "react";
 // icons
-import { Next, Previous, Location, List } from "../assets/icons/icons";
+import {
+  Next,
+  Previous,
+  Location,
+  List,
+  ArrowTop,
+} from "../assets/icons/icons";
 // components
 import Navbar from "../components/Navbar";
 // images
@@ -48,9 +54,25 @@ const Home = () => {
     setIsOpen(!isOpen);
   };
 
+  const [arrowTop, setArrowTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setArrowTop(true);
+      } else {
+        setArrowTop(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="bg-bg-intro px-16">
+      <div className="bg-bg-intro px-16 z-z-intro">
         {/* Navbar */}
         <Navbar currentRoute={window.location.pathname} />
         {/* Hero Section */}
@@ -215,6 +237,11 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {arrowTop && (
+        <a href="#">
+          <ArrowTop />
+        </a>
+      )}
     </>
   );
 };

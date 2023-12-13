@@ -4,6 +4,7 @@ import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { MdOutlineFilterList } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 
 export const DarkMode = () => {
   return (
@@ -42,6 +43,17 @@ export const ArrowDown = () => {
     <>
       <MdOutlineArrowDropDown
         className="inline bg-slate-300 p-1 rounded-lg"
+        size="25"
+      />
+    </>
+  );
+};
+
+export const ArrowTop = () => {
+  return (
+    <>
+      <MdOutlineKeyboardDoubleArrowUp
+        className="inline bg-slate-300 p-1 rounded-lg fixed bottom-10 right-10 text-blue-600 cursor-pointer"
         size="25"
       />
     </>
