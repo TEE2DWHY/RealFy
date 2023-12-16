@@ -42,7 +42,7 @@ export const ArrowDown = () => {
   return (
     <>
       <MdOutlineArrowDropDown
-        className="inline bg-slate-300 p-1 rounded-lg"
+        className="inline bg-slate-300 p-1 rounded-lg cursor-pointer"
         size="25"
       />
     </>
@@ -53,7 +53,7 @@ export const ArrowTop = () => {
   return (
     <>
       <MdOutlineKeyboardDoubleArrowUp
-        className="inline bg-slate-300 p-1 rounded-lg fixed bottom-10 right-10 text-blue-600 cursor-pointer"
+        className="inline bg-slate-300 p-1 rounded-lg fixed bottom-10 right-5 text-blue-600 cursor-pointer font-extrabold"
         size="25"
       />
     </>

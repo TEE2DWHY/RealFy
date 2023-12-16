@@ -13,9 +13,6 @@ export default {
       height: {
         "hero-img-height": "600px",
       },
-      zIndex: {
-        "z-intro": "99999999",
-      },
     },
   },
   plugins: [],

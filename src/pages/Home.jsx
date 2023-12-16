@@ -13,6 +13,8 @@ import Navbar from "../components/Navbar";
 // images
 import heroImg from "../assets/images/hero-img.jpg";
 import estateFive from "../assets/images/estate-5.avif";
+import contactImg from "../assets/images/contact-img.avif";
+
 //data
 import { brands, carouselContents, accordionData } from "../data/data";
 
@@ -70,15 +72,38 @@ const Home = () => {
     };
   }, []);
 
+  const contactDetails = [
+    {
+      header: "Call",
+      details: "022.321.165.19",
+      button: "Call Now",
+    },
+    {
+      header: "Chat",
+      details: "022.321.165.19",
+      button: "Chat Now",
+    },
+    {
+      header: "Video Call",
+      details: "022.321.165.19",
+      button: "Video Call Now",
+    },
+    {
+      header: "Message",
+      details: "022.321.165.19",
+      button: "Message Now",
+    },
+  ];
+
   return (
     <>
-      <div className="bg-bg-intro px-16 z-z-intro">
+      <div className="bg-bg-intro px-16">
         {/* Navbar */}
         <Navbar currentRoute={window.location.pathname} />
         {/* Hero Section */}
         <section className="text-white pt-20 pb-20" id="hero-section">
           <div className="flex items-center justify-between" data-aos="fade-in">
-            <div className="3/5">
+            <div className="w-3/5">
               <h1 className="uppercase w-2/4 text-5xl leading-normal">
                 Discover Most Suitable Property.
               </h1>
@@ -193,14 +218,14 @@ const Home = () => {
       {/* Features */}
       <section className="px-16 py-40" id="features">
         <div className="flex justify-between h-[480px]">
-          <div className="w-5/12">
+          <div className="w-2/5">
             <img
-              className="w-5/6 h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
+              className="w-5/6 h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
               src={estateFive}
               alt="features-img"
             />
           </div>
-          <div className="pt-4 px-20 w-3/5">
+          <div className="pt-4 pl-24 w-3/5">
             <p className="text-amber-600 font-sans text-2xl">Our Value</p>
             <h1 className="text-blue-700 font-sans text-4xl my-2 font-bold">
               Value We Give To You.
@@ -237,8 +262,48 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Us */}
+      <section className="px-16 py-8" id="contact-us">
+        <div className="flex  justify-between">
+          <div className="font-sans">
+            <p className="text-amber-600 text-2xl">Contact Us</p>
+            <h1 className="text-blue-600 text-4xl font-bold my-3">
+              Easy to contact us.
+            </h1>
+            <p className="w-2/5 text-gray-500">
+              Is there a problem finding your dream home? Need a guide in buying
+              Luxurious home? or need a consultation on residential issues? just
+              contact us.
+            </p>
+            <div className="flex items-center justify-between my-5 w-6/12 flex-wrap">
+              {contactDetails.map((contact, index) => (
+                <div
+                  className="w-5/12 mb-8 flex flex-col rounded-md py-4 px-2 mr-2 shadow-md hover:shadow-blue-200 cursor-pointer"
+                  key={index}
+                >
+                  <p className="font-bold text-lg pl-3">{contact.header}</p>
+                  <span className="text-gray-500 my-2 text-sm pl-3">
+                    {contact.details}
+                  </span>
+                  <button className="bg-blue-200 text-blue-700 hover:bg-blue-300 font-bold rounded-md py-2 px-3 my-1 w-5/6 block m-auto text-sm">
+                    {contact.button}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-6/12">
+            <img
+              className="w-full h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
+              src={contactImg}
+              alt="features-img"
+            />
+          </div>
+        </div>
+      </section>
       {arrowTop && (
-        <a href="#">
+        <a href="#" className="z-50">
           <ArrowTop />
         </a>
       )}
