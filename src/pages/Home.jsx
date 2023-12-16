@@ -266,7 +266,7 @@ const Home = () => {
       {/* Contact Us */}
       <section className="px-16 py-8" id="contact-us">
         <div className="flex  justify-between">
-          <div className="font-sans">
+          <div className="font-sans w-3/5">
             <p className="text-amber-600 text-2xl">Contact Us</p>
             <h1 className="text-blue-600 text-4xl font-bold my-3">
               Easy to contact us.
@@ -295,7 +295,7 @@ const Home = () => {
           </div>
           <div className="w-6/12">
             <img
-              className="w-full h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
+              className="w-10/12 h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
               src={contactImg}
               alt="features-img"
             />
