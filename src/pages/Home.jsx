@@ -43,8 +43,13 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    SetCustomerStats(customerStats + 2);
-    setAwardStats(awardStats + 5);
+    const customerInterval = SetCustomerStats(customerStats + 2);
+    return () => clearInterval(customerInterval);
+  }, [premiumProduct]);
+
+  useEffect(() => {
+    const awardInterval = setAwardStats(awardStats + 5);
+    return () => clearInterval(awardInterval);
   }, [premiumProduct]);
 
   const [currentContent, setCurrentContent] = useState(0);
@@ -287,10 +292,10 @@ const Home = () => {
       {/* Get Started */}
       <section
         id="get-started"
-        className="my-20 flex items-center justify-center "
+        className="my-20 flex items-center justify-center"
       >
-        <div className=" bg-blue-600 border-gray-300 border-2 flex items-center justify-center flex-col rounded-2xl px-12 py-4">
-          <h1 className="text-3xl my-5 text-white">Get Started with Realfy.</h1>
+        <div className=" bg-blue-600 border-gray-300 border-4 flex items-center justify-center flex-col rounded-2xl px-12 py-4 w3/5">
+          <h1 className="text-4xl my-5 text-white">Get Started with Realfy.</h1>
           <p className="font-sans mb-2 text-sm text-gray-300  w-3/5">
             Subscribe and find super attractive price quotes from us, Find your
             residence soon.
@@ -298,6 +303,38 @@ const Home = () => {
           <button className="font-sans bg-blue-400 text-white my-2 px-4 py-2 rounded-md text-sm hover:bg-blue-300">
             Get Started
           </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <section className="my-10 px-16">
+        <div className="flex justify-between">
+          <div className="flex flex-col w-1/5">
+            <a href="#" className="text-blue-600">
+              REALFY.
+            </a>
+            <span className="opacity-50 font-sans text-sm">
+              Our vision is to give the people satisfying taste of their money.
+            </span>
+          </div>
+          <div className="font-sans flex flex-col leading-10">
+            <h1 className="font-bold">About</h1>
+            <span>About Us</span>
+            <span>Features</span>
+            <span>News & Blog</span>
+          </div>
+          <div className="font-sans flex flex-col leading-10">
+            <h1 className="font-bold">Company</h1>
+            <span>How We Work?</span>
+            <span>Capital</span>
+            <span>Security</span>
+          </div>
+          <div className="font-sans flex flex-col leading-10">
+            <h1 className="font-bold">Support</h1>
+            <span>FAQs</span>
+            <span>Support Center</span>
+            <span>Contact Us</span>
+          </div>
         </div>
       </section>
 
