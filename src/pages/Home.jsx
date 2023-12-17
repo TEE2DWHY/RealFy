@@ -24,10 +24,12 @@ import {
 
 const Home = () => {
   const [premiumProduct, setPremiumProduct] = useState(0);
-  const [customerStats, SetCustomerStats] = useState(8);
+  const [customerStats, setCustomerStats] = useState(8);
   const [awardStats, setAwardStats] = useState(14);
 
   useEffect(() => {
+    const intervals = [];
+    // Premium Product Interval
     const productInterval = setInterval(() => {
       setPremiumProduct((prevProduct) => {
         if (prevProduct < 9) {
@@ -38,19 +40,36 @@ const Home = () => {
         }
       });
     }, 500);
+    intervals.push(productInterval);
+    // Customer Stats Interval
+    const customerInterval = setInterval(() => {
+      setCustomerStats((prevStats) => {
+        if (prevStats <= 28) {
+          return prevStats + 3;
+        } else {
+          clearInterval(customerInterval);
+          return prevStats;
+        }
+      });
+    }, 500);
+    intervals.push(customerInterval);
+    // Award Stats Interval
+    const awardInterval = setInterval(() => {
+      setAwardStats((prevStats) => {
+        if (prevStats <= 40) {
+          return prevStats + 5;
+        } else {
+          clearInterval(awardInterval);
+          return prevStats;
+        }
+      });
+    }, 500);
+    intervals.push(awardInterval);
 
-    return () => clearInterval(productInterval);
+    return () => {
+      intervals.forEach((interval) => clearInterval(interval));
+    };
   }, []);
-
-  useEffect(() => {
-    const customerInterval = SetCustomerStats(customerStats + 2);
-    return () => clearInterval(customerInterval);
-  }, [premiumProduct]);
-
-  useEffect(() => {
-    const awardInterval = setAwardStats(awardStats + 5);
-    return () => clearInterval(awardInterval);
-  }, [premiumProduct]);
 
   const [currentContent, setCurrentContent] = useState(0);
   const handleSlide = (index) => {
@@ -292,7 +311,7 @@ const Home = () => {
       {/* Get Started */}
       <section
         id="get-started"
-        className="my-20 flex items-center justify-center"
+        className="my-40 flex items-center justify-center"
       >
         <div className=" bg-blue-600 border-gray-300 border-4 flex items-center justify-center flex-col rounded-2xl px-12 py-4 w3/5">
           <h1 className="text-4xl my-5 text-white">Get Started with Realfy.</h1>
