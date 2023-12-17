@@ -11,7 +11,7 @@ const Navbar = ({ currentRoute }) => {
   return (
     <nav className="text-white capitalize">
       <div className="flex items-center justify-between py-5">
-        <div className="cursor-pointer">Realfy.</div>
+        <div className="cursor-pointer font-bold uppercase">Realfy.</div>
         <ul className="flex justify-between items-center space-x-8">
           {navigationItems.map((item, index) => (
             <a href={item.id ? `#${item.id}` : null} key={index}>

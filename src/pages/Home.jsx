@@ -14,9 +14,13 @@ import Navbar from "../components/Navbar";
 import heroImg from "../assets/images/hero-img.jpg";
 import estateFive from "../assets/images/estate-5.avif";
 import contactImg from "../assets/images/contact-img.avif";
-
 //data
-import { brands, carouselContents, accordionData } from "../data/data";
+import {
+  brands,
+  carouselContents,
+  accordionData,
+  contactDetails,
+} from "../data/data";
 
 const Home = () => {
   const [premiumProduct, setPremiumProduct] = useState(0);
@@ -71,29 +75,6 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const contactDetails = [
-    {
-      header: "Call",
-      details: "022.321.165.19",
-      button: "Call Now",
-    },
-    {
-      header: "Chat",
-      details: "022.321.165.19",
-      button: "Chat Now",
-    },
-    {
-      header: "Video Call",
-      details: "022.321.165.19",
-      button: "Video Call Now",
-    },
-    {
-      header: "Message",
-      details: "022.321.165.19",
-      button: "Message Now",
-    },
-  ];
 
   return (
     <>
@@ -225,7 +206,7 @@ const Home = () => {
               alt="features-img"
             />
           </div>
-          <div className="pt-4 pl-24 w-3/5">
+          <div className="pt-4 w-2/5">
             <p className="text-amber-600 font-sans text-2xl">Our Value</p>
             <h1 className="text-blue-700 font-sans text-4xl my-2 font-bold">
               Value We Give To You.
@@ -271,7 +252,7 @@ const Home = () => {
             <h1 className="text-blue-600 text-4xl font-bold my-3">
               Easy to contact us.
             </h1>
-            <p className="w-2/5 text-gray-500">
+            <p className="w-6/12 text-gray-500">
               Is there a problem finding your dream home? Need a guide in buying
               Luxurious home? or need a consultation on residential issues? just
               contact us.
@@ -302,6 +283,25 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Get Started */}
+      <section
+        id="get-started"
+        className="my-20 flex items-center justify-center "
+      >
+        <div className=" bg-blue-600 border-gray-300 border-2 flex items-center justify-center flex-col rounded-2xl px-12 py-4">
+          <h1 className="text-3xl my-5 text-white">Get Started with Realfy.</h1>
+          <p className="font-sans mb-2 text-sm text-gray-300  w-3/5">
+            Subscribe and find super attractive price quotes from us, Find your
+            residence soon.
+          </p>
+          <button className="font-sans bg-blue-400 text-white my-2 px-4 py-2 rounded-md text-sm hover:bg-blue-300">
+            Get Started
+          </button>
+        </div>
+      </section>
+
+      {/* Top Arrow */}
       {arrowTop && (
         <a href="#" className="z-50">
           <ArrowTop />

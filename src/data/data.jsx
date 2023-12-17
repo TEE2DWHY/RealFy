@@ -92,4 +92,27 @@ const accordionData = [
   },
 ];
 
-export { brands, carouselContents, accordionData };
+const contactDetails = [
+  {
+    header: "Call",
+    details: "022.321.165.19",
+    button: "Call Now",
+  },
+  {
+    header: "Chat",
+    details: "022.321.165.19",
+    button: "Chat Now",
+  },
+  {
+    header: "Video Call",
+    details: "022.321.165.19",
+    button: "Video Call Now",
+  },
+  {
+    header: "Message",
+    details: "022.321.165.19",
+    button: "Message Now",
+  },
+];
+
+export { brands, carouselContents, accordionData, contactDetails };
