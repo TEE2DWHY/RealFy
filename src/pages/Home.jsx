@@ -109,13 +109,13 @@ const Home = () => {
   };
   return (
     <>
-      <div className={darkMode ? "bg-black" : ""}>
+      <div className={darkMode ? "bg-black text-white" : ""}>
         <div className="bg-bg-intro px-16">
           {/* Navbar */}
           <Navbar
             currentRoute={window.location.pathname}
             toggleMode={handleMode}
-            modes={darkMode ? <LightMode /> : <DarkMode />}
+            icons={darkMode ? <LightMode /> : <DarkMode />}
           />
 
           {/* Hero Section */}
@@ -180,7 +180,9 @@ const Home = () => {
                 data-aos={brand.animation}
                 data-aos-duration={brand.duration}
                 key={index}
-                className="w-60 h-60 cursor-pointer"
+                className={`w-60 h-60 cursor-pointer ${
+                  darkMode ? "rounded-full" : ""
+                } `}
                 src={brand.img}
                 alt={brand.alt}
               />
