@@ -104,9 +104,7 @@ const Home = () => {
   }, []);
 
   const [darkMode, setDarkMode] = useState(false);
-  const handleMode = () => {
-    setDarkMode(!darkMode);
-  };
+
   return (
     <>
       <div className={darkMode ? "bg-black text-white" : ""}>
@@ -114,7 +112,9 @@ const Home = () => {
           {/* Navbar */}
           <Navbar
             currentRoute={window.location.pathname}
-            toggleMode={handleMode}
+            toggleMode={() => {
+              setDarkMode(!darkMode);
+            }}
             icons={darkMode ? <LightMode /> : <DarkMode />}
           />
 
