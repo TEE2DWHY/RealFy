@@ -14,7 +14,7 @@ const LinkItem = ({ title }) => {
 const Footer = () => {
   return (
     <>
-      <footer className="my-10 px-16">
+      <footer className="mt-10 px-16">
         <div className="flex justify-between">
           {/* Branding */}
           <div className="w-1/5">

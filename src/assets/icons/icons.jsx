@@ -5,11 +5,20 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import { MdOutlineFilterList } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 
 export const DarkMode = () => {
   return (
     <>
       <MdDarkMode size="25" cursor="pointer" />
+    </>
+  );
+};
+
+export const LightMode = () => {
+  return (
+    <>
+      <CiLight size="25" cursor="pointer" />
     </>
   );
 };
