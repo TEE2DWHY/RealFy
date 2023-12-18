@@ -21,6 +21,7 @@ import {
   accordionData,
   contactDetails,
 } from "../data/data";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [premiumProduct, setPremiumProduct] = useState(0);
@@ -326,36 +327,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <section className="my-10 px-16">
-        <div className="flex justify-between">
-          <div className="flex flex-col w-1/5">
-            <a href="#" className="text-blue-600">
-              REALFY.
-            </a>
-            <span className="opacity-50 font-sans text-sm">
-              Our vision is to give the people satisfying taste of their money.
-            </span>
-          </div>
-          <div className="font-sans flex flex-col leading-10">
-            <h1 className="font-bold">About</h1>
-            <span>About Us</span>
-            <span>Features</span>
-            <span>News & Blog</span>
-          </div>
-          <div className="font-sans flex flex-col leading-10">
-            <h1 className="font-bold">Company</h1>
-            <span>How We Work?</span>
-            <span>Capital</span>
-            <span>Security</span>
-          </div>
-          <div className="font-sans flex flex-col leading-10">
-            <h1 className="font-bold">Support</h1>
-            <span>FAQs</span>
-            <span>Support Center</span>
-            <span>Contact Us</span>
-          </div>
-        </div>
-      </section>
+      <Footer />
 
       {/* Top Arrow */}
       {arrowTop && (
