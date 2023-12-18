@@ -10,7 +10,7 @@ import { CiLight } from "react-icons/ci";
 export const DarkMode = () => {
   return (
     <>
-      <MdDarkMode size="25" cursor="pointer" />
+      <MdDarkMode size="25" cursor="pointer" data-aos="fade-in" />
     </>
   );
 };
@@ -18,7 +18,7 @@ export const DarkMode = () => {
 export const LightMode = () => {
   return (
     <>
-      <CiLight size="25" cursor="pointer" />
+      <CiLight size="25" cursor="pointer" data-aos="fade-in" />
     </>
   );
 };
