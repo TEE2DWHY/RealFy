@@ -174,13 +174,13 @@ const Home = () => {
 
         {/* Partners */}
         <section className="px-16 pt-14" id="partners">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex md:flex-row items-center justify-between">
             {brands.map((brand, index) => (
               <img
                 data-aos={brand.animation}
                 data-aos-duration={brand.duration}
                 key={index}
-                className={`w-60 h-60 cursor-pointer ${
+                className={`w-2/3 h-2/3 sm:w-60 sm:h-60 cursor-pointer ${
                   darkMode ? "rounded-full" : ""
                 } `}
                 src={brand.img}
