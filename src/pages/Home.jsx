@@ -289,19 +289,19 @@ const Home = () => {
         </section>
 
         {/* Contact Us */}
-        <section className="py-52 px-16 md:py-8" id="contact-us">
-          <div className="flex  justify-between">
+        <section className="px-8 pt-52 md:px-16 md:py-8" id="contact-us">
+          <div className="flex-col md:flex md:flex-row justify-between">
             <div className="font-sans">
               <p className="text-amber-600 text-2xl">Contact Us</p>
               <h1 className="text-blue-600 text-4xl font-bold my-3">
                 Easy to contact us.
               </h1>
-              <p className="w-6/12 text-gray-500">
+              <p className="w-full md:w-6/12 text-gray-500">
                 Is there a problem finding your dream home? Need a guide in
                 buying Luxurious home? or need a consultation on residential
                 issues? just contact us.
               </p>
-              <div className="flex items-center justify-between my-5 w-6/12 flex-wrap">
+              <div className="w-full flex items-center justify-between my-5 md:w-6/12 flex-wrap">
                 {contactDetails.map((contact, index) => (
                   <div
                     className="w-5/12 mb-8 flex flex-col rounded-md py-4 px-2 mr-2 shadow-md hover:shadow-blue-200 cursor-pointer"
@@ -318,9 +318,9 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            <div className="w-6/12">
+            <div className="w-full md:w-6/12">
               <img
-                className="w-full h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
+                className="h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
                 src={contactImg}
                 alt="features-img"
               />
@@ -331,13 +331,13 @@ const Home = () => {
         {/* Get Started */}
         <section
           id="get-started"
-          className="my-40 flex items-center justify-center"
+          className="my-20 md:my-40 flex items-center justify-center"
         >
           <div className=" bg-blue-600 border-gray-300 border-4 flex items-center justify-center flex-col rounded-2xl px-12 py-4 w3/5">
-            <h1 className="text-4xl my-5 text-white">
+            <h1 className="text-2xl md:text-4xl my-5 text-white">
               Get Started with Realfy.
             </h1>
-            <p className="font-sans mb-2 text-sm text-gray-300  w-3/5">
+            <p className="w-full font-sans mb-2 text-sm text-gray-300 md:w-3/5">
               Subscribe and find super attractive price quotes from us, Find
               your residence soon.
             </p>
