@@ -108,7 +108,7 @@ const Home = () => {
   return (
     <>
       <div className={darkMode ? "bg-black text-white" : ""}>
-        <div className="bg-bg-intro px-16">
+        <div className="px-8 bg-bg-intro md:px-16">
           {/* Navbar */}
           <Navbar
             currentRoute={window.location.pathname}
@@ -121,49 +121,51 @@ const Home = () => {
           {/* Hero Section */}
           <section className="text-white pt-20 pb-20" id="hero-section">
             <div
-              className="flex items-center justify-between"
+              className="flex-col md:flex md:flex-row items-center justify-between"
               data-aos="fade-in"
             >
-              <div className="w-3/5">
-                <h1 className="uppercase w-2/4 text-5xl leading-normal">
+              <div className="">
+                <h1 className="w-full leading-normal text-4xl uppercase md:w-2/4 md:text-5xl md:leading-normal ">
                   Discover Most Suitable Property.
                 </h1>
-                <p className="w-2/4 my-3 opacity-90">
+                <p className="w-3/4 md:w-2/4 my-3 opacity-90">
                   Find a variety of properties that suit your taste.
                 </p>
                 <Location />
-                <input
-                  placeholder="Search by location..."
-                  type="text"
-                  className="py-4 px-12 rounded-lg w-5/12 border-2 border-gray-400 my-5 text-black focus:font-sans outline-none"
-                />
-                <button className="bg-blue-600 py-2 px-6 -ml-28 rounded-md text-sm">
-                  Search
-                </button>
-                <ul className="flex items-center justify-between w-2/4 my-3 px-4">
+                <div className="relative">
+                  <input
+                    placeholder="Search by location..."
+                    type="text"
+                    className="px-5 w-4/5 text-sm py-4 md:px-12 rounded-lg md:w-5/12 md:text-lg border-2 border-gray-400 my-5 text-black focus:font-sans outline-none"
+                  />
+                  <button className="left-52 top-9 bg-blue-600 py-1 px-2 md:py-2 md:px-4 rounded-md text-sm absolute md:top-8 md:left-64">
+                    Search
+                  </button>
+                </div>
+                <ul className="w-full flex items-center justify-between md:w-2/4 my-3 px-4">
                   <li className="text-4xl">
                     {premiumProduct}K <sup className="text-amber-600">+</sup>
-                    <span className="text-sm block mt-2 font-sans">
+                    <span className="text-xs md:text-sm block mt-2 font-sans">
                       Premium Product
                     </span>
                   </li>
                   <li className="text-4xl">
                     {customerStats}K <sup className="text-amber-600">+</sup>
-                    <span className="text-sm block mt-2 font-sans">
+                    <span className="text-xs md:text-sm block mt-2 font-sans">
                       Happy Customer
                     </span>
                   </li>
                   <li className="text-4xl">
                     {awardStats}K <sup className="text-amber-600">+</sup>
-                    <span className="text-sm block mt-2 font-sans">
+                    <span className="text-xs md:text-sm block mt-2 font-sans">
                       Award Winning
                     </span>
                   </li>
                 </ul>
               </div>
-              <div className="w-2/5">
+              <div className="w-full md:w-2/5">
                 <img
-                  className="w-full h-hero-img-height block mx-auto rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
+                  className="h-2/3 w-full mt-20 md:mt-0 md:h-hero-img-height block mx-auto rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
                   src={heroImg}
                   alt="hero-img"
                 />
@@ -195,8 +197,8 @@ const Home = () => {
           <p className="text-xl text-amber-600 mb-3 font-sans">Best Choice.</p>
           <h1 className="text-3xl mb-4">Popular Residences.</h1>
           <div>
-            <div className="flex hover:rounded-md hover:rounded-b-md hover:shadow-lg px-4 py-4">
-              <div className="flex-shrink-0">
+            <div className="px-4 flex hover:rounded-md hover:rounded-b-md hover:shadow-lg md:px-4 py-4">
+              <div className="w-4/5 md:2/5 flex-shrink-0">
                 <img
                   className="rounded-lg my-3 cursor-pointer"
                   src={carouselContents[currentContent].img}
@@ -209,7 +211,7 @@ const Home = () => {
                 <p className="font-sans text-amber-600 text-md">
                   {carouselContents[currentContent].name}
                 </p>
-                <p className="text-md w-3/5 font-sans font-bold">
+                <p className="w-4/5 text-md md:w-3/5 font-sans font-bold">
                   {carouselContents[currentContent].address}
                 </p>
               </div>
