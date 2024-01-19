@@ -193,7 +193,7 @@ const Home = () => {
         </section>
 
         {/* Popular Residences */}
-        <section className="px-16 mt-20" id="residence">
+        <section className="px-8 md:px-16 mt-20" id="residence">
           <p className="text-xl text-amber-600 mb-3 font-sans">Best Choice.</p>
           <h1 className="text-3xl mb-4">Popular Residences.</h1>
           <div>
@@ -241,28 +241,28 @@ const Home = () => {
         </section>
 
         {/* Features */}
-        <section className="px-16 py-40" id="features">
-          <div className="flex justify-between h-[480px]">
-            <div className="w-2/5">
+        <section className="px-8 md:px-16 py-40" id="features">
+          <div className="flex-col flex items-center  md:flex md:flex-row md:justify-between h-[480px]">
+            <div className="w-full md:w-2/5">
               <img
-                className="w-5/6 h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
+                className="w-full h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
                 src={estateFive}
                 alt="features-img"
               />
             </div>
-            <div className="pt-4 w-2/5">
+            <div className="pt-4 w-full md:w-2/5">
               <p className="text-amber-600 font-sans text-2xl">Our Value</p>
-              <h1 className="text-blue-700 font-sans text-4xl my-2 font-bold">
+              <h1 className="text-2xl text-blue-700 font-sans md:text-4xl my-2 font-bold">
                 Value We Give To You.
               </h1>
-              <p className="w-4/6 font-sans text-gray-500 flex items-center justify-center">
+              <p className="w-full md:w-4/6 font-sans text-gray-500 flex items-center justify-center">
                 We are always ready to help by providing the best service for
                 you. We believe a good place to live can make your life better.
               </p>
               <div className="rounded-md border-solid border-gray-900 py-2">
                 {accordionData.map((data, index) => (
                   <div
-                    className="text-blue-600 my-4 font-sans border-2 py-3 px-2 rounded-lg font-bold w-10/12"
+                    className="w-full text-blue-600 my-4 font-sans border-2 py-3 px-2 rounded-lg font-bold md:w-10/12"
                     key={index}
                   >
                     <div className="flex items-center justify-between">
@@ -289,7 +289,7 @@ const Home = () => {
         </section>
 
         {/* Contact Us */}
-        <section className="px-16 py-8" id="contact-us">
+        <section className="py-52 px-16 md:py-8" id="contact-us">
           <div className="flex  justify-between">
             <div className="font-sans">
               <p className="text-amber-600 text-2xl">Contact Us</p>

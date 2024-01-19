@@ -42,8 +42,7 @@ const carouselContents = [
     img: estateOne,
     price: "$75,023",
     name: "Briticia Private Garden",
-    address:
-      "Oliva Private Garden Along St David church arequipa, - Peru Av. Sol #5276.",
+    address: "Oliva Private Garden Along St David church arequipa.",
   },
   {
     img: estateTwo,
