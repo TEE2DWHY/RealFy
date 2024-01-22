@@ -12,7 +12,7 @@ const Navbar = ({ currentRoute, toggleMode, icons }) => {
         <div className="cursor-pointer font-bold uppercase text-blue-600">
           Realfy.
         </div>
-        <ul className="flex justify-between items-center space-x-8">
+        <ul className="hidden justify-between items-center space-x-8 md:flex">
           {navigationItems.map((item, index) => (
             <a href={item.id ? `#${item.id}` : null} key={index}>
               <li

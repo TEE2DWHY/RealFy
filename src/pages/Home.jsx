@@ -26,9 +26,24 @@ import {
 } from "../data/data";
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
   const [premiumProduct, setPremiumProduct] = useState(0);
   const [customerStats, setCustomerStats] = useState(8);
   const [awardStats, setAwardStats] = useState(14);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1200);
+    };
+    if (isMobile) {
+      window.addEventListener("resize", handleResize);
+    } else {
+      window.addEventListener("resize", handleResize);
+    }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMobile]);
 
   useEffect(() => {
     const intervals = [];
@@ -165,7 +180,7 @@ const Home = () => {
               </div>
               <div className="w-full md:w-2/5">
                 <img
-                  className="h-2/3 w-full mt-20 md:mt-0 md:h-hero-img-height block mx-auto rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
+                  className="h-1/3 w-full mt-20 md:mt-0 md:h-hero-img-height block mx-auto rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px]"
                   src={heroImg}
                   alt="hero-img"
                 />
@@ -179,7 +194,7 @@ const Home = () => {
           <div className="flex flex-col md:flex md:flex-row items-center justify-between">
             {brands.map((brand, index) => (
               <img
-                data-aos={brand.animation}
+                data-aos={isMobile ? "fade-up" : brand.animation}
                 data-aos-duration={brand.duration}
                 key={index}
                 className={`w-2/3 h-2/3 sm:w-60 sm:h-60 cursor-pointer ${
@@ -266,7 +281,7 @@ const Home = () => {
                     key={index}
                   >
                     <div className="flex items-center justify-between">
-                      <span>
+                      <span className="text-sm md:text-lg">
                         <List /> {data.question}
                       </span>
                       <span onClick={() => handleAccordion(data.accordionKey)}>
@@ -320,7 +335,7 @@ const Home = () => {
             </div>
             <div className="w-full md:w-6/12">
               <img
-                className="h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
+                className="h-1/3 md:h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
                 src={contactImg}
                 alt="features-img"
               />
