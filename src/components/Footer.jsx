@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <>
       <footer className="mt-10 px-8 md:px-16">
-        <div className="flex flex-col md:flex justify-between">
+        <div className="flex flex-col md:flex md:flex-row justify-between">
           {/* Branding */}
           <div className="w-full pb-6 md:w-1/5 md:pb-0">
             <a href="#" className="text-blue-600 font-bold">
