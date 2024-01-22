@@ -305,7 +305,7 @@ const Home = () => {
 
         {/* Contact Us */}
         <section className="px-8 pt-52 md:px-16 md:py-8" id="contact-us">
-          <div className="flex-col md:flex md:flex-row justify-between">
+          <div className="flex flex-col items-center md:flex md:flex-row justify-between">
             <div className="font-sans">
               <p className="text-amber-600 text-2xl">Contact Us</p>
               <h1 className="text-blue-600 text-4xl font-bold my-3">
@@ -333,9 +333,9 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            <div className="w-full md:w-6/12">
+            <div className="flex items-center justify-center w-full md:w-6/12">
               <img
-                className="h-1/3 md:h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
+                className="h-80 md:h-full rounded-md rounded-tl-[135px] rounded-tr-[135px] rounded-br-[0px] rounded-bl-[0px] cursor-pointer"
                 src={contactImg}
                 alt="features-img"
               />
