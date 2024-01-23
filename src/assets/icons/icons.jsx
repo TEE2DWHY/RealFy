@@ -6,6 +6,7 @@ import { MdOutlineFilterList } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
+import { RiMenu3Line } from "react-icons/ri";
 
 export const DarkMode = () => {
   return (
@@ -81,6 +82,14 @@ export const Cancel = () => {
   return (
     <>
       <MdCancel className="inline mr-1 cursor-pointer" size="20" />
+    </>
+  );
+};
+
+export const Menu = () => {
+  return (
+    <>
+      <RiMenu3Line />
     </>
   );
 };

@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Menu } from "../assets/icons/icons";
 const navigationItems = [
   { text: "home", route: "/" },
   { text: "residence", route: "/residence", id: "residence" },
@@ -6,13 +8,25 @@ const navigationItems = [
 ];
 
 const Navbar = ({ currentRoute, toggleMode, icons }) => {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   return (
     <nav className="text-white capitalize">
       <div className="flex items-center justify-between py-5">
         <div className="cursor-pointer font-bold uppercase text-blue-600">
           Realfy.
         </div>
-        <ul className="hidden justify-between items-center space-x-8 md:flex">
+
+        <ul
+          className={`${
+            mobileMenu
+              ? "absolute bg-slate-100"
+              : "hidden justify-between items-center space-x-8 md:flex"
+          }`}
+          onClick={() => {
+            setMobileMenu(!mobileMenu);
+          }}
+        >
           {navigationItems.map((item, index) => (
             <a href={item.id ? `#${item.id}` : null} key={index}>
               <li
@@ -28,10 +42,15 @@ const Navbar = ({ currentRoute, toggleMode, icons }) => {
           ))}
         </ul>
         <div className="flex justify-between items-center space-x-5">
-          <div onClick={toggleMode}>{icons}</div>
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-md capitalize">
+          <div className="ml-48 md:ml-0" onClick={toggleMode}>
+            {icons}
+          </div>
+          <button className="hidden md:flex px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-md capitalize">
             subscribe
           </button>
+        </div>
+        <div className="flex md:hidden nav-toggler">
+          <Menu />
         </div>
       </div>
     </nav>
