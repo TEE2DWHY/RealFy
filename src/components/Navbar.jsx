@@ -42,7 +42,7 @@ const Navbar = ({ currentRoute, toggleMode, icons }) => {
           ))}
         </ul>
         <div className="flex justify-between items-center space-x-5">
-          <div className="ml-48 md:ml-0" onClick={toggleMode}>
+          <div className="ml-40 md:ml-0" onClick={toggleMode}>
             {icons}
           </div>
           <button className="hidden md:flex px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-md capitalize">
